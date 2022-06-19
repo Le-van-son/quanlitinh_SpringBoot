@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Products</h3>
+
+<form method="post"  >
+
+    Name:<input type="text" name="name">
+    Province:
+    <select name="province" >
+        <option th:each="pro : ${provincess}" th:value="${pro.getId}" th:text="${pro.getName}"></option>
+    </select>
+    <br/>
+    <button>Create</button>
+</form>
+
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
